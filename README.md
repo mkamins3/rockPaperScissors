@@ -1,0 +1,1 @@
+Just a lil rock paper scissors. Took a bit to work out the loop, and the title casing of the player input.

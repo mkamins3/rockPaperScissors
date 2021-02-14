@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+
+        function game() {
+            // SET THE STAGE
+            var playerScore = 0;
+            var computerScore = 0;
+            var roundCount = 1;
+
+            while (roundCount <= 5) {
+
+                // PLAYER SELECTS PLAY
+                let playerSelection = (prompt('Choose: Rock, Paper, or Scissors'));
+
+                // RANDOM COMPUTER PLAY
+                function computerPlay() {
+                    const playArr = ['Rock', 'Paper', 'Scissors'];
+                    let computerPlay = playArr[Math.floor(Math.random() * 3)];
+                    return computerPlay;
+                };
+                let computerSelection = computerPlay();
+
+                // PLAYER WINS
+                if ((playerSelection.toUpperCase() == "ROCK" && computerSelection.toUpperCase() == "SCISSORS")
+                    || (playerSelection.toUpperCase() == "PAPER" && computerSelection.toUpperCase() == "ROCK")
+                    || (playerSelection.toUpperCase() == "SCISSORS" && computerSelection.toUpperCase() == "PAPER")) {
+                    playerScore += 1;
+                    let capFirst = playerSelection[0].toUpperCase()
+                    let restOfWord = playerSelection.toLowerCase().slice(1);
+                    console.log(capFirst + restOfWord + ' beats ' + computerSelection + ', you win 1 point');
+                    roundCount += 1;
+                }
+                // DRAW
+                else if (playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
+                    let capFirst = playerSelection[0].toUpperCase()
+                    let restOfWord = playerSelection.toLowerCase().slice(1);
+                    console.log(capFirst + restOfWord + ' and ' + computerSelection.toLowerCase() + ', that\'s a draw!');
+                    roundCount += 1;
+
+                }
+                // PLAYER LOSES
+                else {
+                    computerScore += 1;
+                    let capFirst = computerSelection[0].toUpperCase()
+                    let restOfWord = computerSelection.toLowerCase().slice(1);
+                    console.log('Computer wins one point ' + capFirst + restOfWord + ' beats ' + playerSelection + '.');
+                    roundCount += 1;
+                };
+            } if (computerScore < playerScore) {
+                console.log('YOU WIN! ' + playerScore + ' TO ' + computerScore + '!');
+            } else if (computerScore == playerScore) {
+                console.log('THE WHOLE THING\'S A DRAW!!');
+            } else {
+                console.log('YOU LOSE! ' + playerScore + ' TO ' + computerScore + '!');
+            };
+        };
+
+
+        game();
+
+    </script>
+</body>
+
+</html>
