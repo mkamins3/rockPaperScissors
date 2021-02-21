@@ -1,0 +1,54 @@
+body{
+    background: black;
+    color: rgba(251, 255, 9, 0.527);
+}
+#container {
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+#headings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    margin: 0;
+}
+.buttons {
+    margin-top: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+button {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: rgba(255, 255, 255, 0.842);
+    background-color: rgba(110, 107, 107, 0.699);
+    border-radius: 40%;
+    border-color: rgba(231, 235, 0, 0.192);
+    box-shadow: 0 .2rem rgba(110, 107, 107, 0.801);
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: rgba(110, 107, 107, 0.555);
+    border-color: rgba(231, 235, 0, 0.616);
+}
+
+button:active {
+    box-shadow: 0 .15rem rgba(110, 107, 107, 0.801);
+    transform: translateY(4px);
+}
+
+#scoreBoard {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
